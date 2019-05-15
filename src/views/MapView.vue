@@ -99,6 +99,18 @@ export default {
   },
   mounted() {
     axios
+      .get("/api?term=delis&latitude=37.786882&longitude=-122.399972", {
+        headers: {
+          Authorization: `Bearer ${process.env.VUE_APP_YELP_API}`
+        }
+      })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    axios
       .get("/.netlify/functions/get-yelp", {
         params: {
           location: "chicago,il",
