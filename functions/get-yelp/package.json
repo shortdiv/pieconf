@@ -1,0 +1,17 @@
+{
+  "name": "get-yelp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "get-yelp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "yelp"
+  ],
+  "author": "shortdiv",
+  "license": "MIT",
+  "dependencies": {
+    "yelp-fusion": "^3.0.0"
+  }
+}

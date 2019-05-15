@@ -36,6 +36,8 @@ import SourceLayer from "@/components/SourceLayer.vue";
 import FeatureLayer from "@/components/FeatureLayer.vue";
 import Icon from "@/assets/logo.png";
 
+import axios from "axios";
+
 export default {
   name: "MapView",
   components: {
@@ -65,6 +67,20 @@ export default {
         ]
       }
     };
+  },
+  mounted() {
+    axios
+      .get("/.netlify/functions/get-yelp", {
+        params: {
+          location: "chicago,il",
+          term: "pizza"
+        }
+      })
+      .then(async res => {
+        //yay data//
+        res = JSON.parse(res.data.results.body);
+        console.log(res);
+      });
   }
 };
 </script>
