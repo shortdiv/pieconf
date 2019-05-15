@@ -17,7 +17,11 @@
             img-name="vue"
             img-size="0.15"
             :img="img"
-          />
+          >
+            <FeaturePopup>
+              <span>Hello Pie Conf!</span>
+            </FeaturePopup>
+          </FeatureLayer>
         </ContextWrapper>
       </template>
     </BaseMap>
@@ -27,6 +31,7 @@
 <script>
 import BaseMap from "@/components/BaseMap.vue";
 import ContextWrapper from "@/components/ContextWrapper.js";
+import FeaturePopup from "@/components/FeaturePopup.vue";
 import SourceLayer from "@/components/SourceLayer.vue";
 import FeatureLayer from "@/components/FeatureLayer.vue";
 import Icon from "@/assets/logo.png";
@@ -37,6 +42,7 @@ export default {
     BaseMap,
     SourceLayer,
     FeatureLayer,
+    FeaturePopup,
     ContextWrapper
   },
   data() {
