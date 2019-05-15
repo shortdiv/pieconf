@@ -22,30 +22,32 @@
               <span>Hello Pie Conf!</span>
             </FeaturePopup>
           </FeatureLayer>
-          <SourceLayer
-            :map-context="mapContext"
-            source-id="yelp"
-            source-type="geojson"
-            :data-src="yelpData"
-          />
-          <FeatureLayer
-            :map-context="mapContext"
-            :img="pins"
-            layer-type="symbol"
-            img-name="pins"
-            img-size="0.3"
-            map-id="yelp-pops"
-            source-id="yelp"
-            @layer-clicked="
-              e => {
-                moveMap(mapContext, e);
-              }
-            "
-          >
-            <FeaturePopup>
-              <span>Hello Vue Conf!</span>
-            </FeaturePopup>
-          </FeatureLayer>
+          <template v-if="yelpData != null">
+            <SourceLayer
+              :map-context="mapContext"
+              source-id="yelp"
+              source-type="geojson"
+              :data-src="yelpData"
+            />
+            <FeatureLayer
+              :map-context="mapContext"
+              :img="pins"
+              layer-type="symbol"
+              img-name="pins"
+              img-size="0.3"
+              map-id="yelp-pops"
+              source-id="yelp"
+              @layer-clicked="
+                e => {
+                  moveMap(mapContext, e);
+                }
+              "
+            >
+              <FeaturePopup>
+                <span>Hello Vue Conf!</span>
+              </FeaturePopup>
+            </FeatureLayer>
+          </template>
         </ContextWrapper>
       </template>
     </BaseMap>
