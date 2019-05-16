@@ -1,2 +1,1 @@
-/api term=:term https://api.yelp.com/v3/businesses/search?term=:term&latitude=37.786882&longitude=-122.399972 301
-
+/api/* term=:term location=:location https://api.yelp.com/v3/businesses/search?term=:term&location=:location 301

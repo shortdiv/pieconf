@@ -99,9 +99,13 @@ export default {
   },
   mounted() {
     axios
-      .get("/api?term=delis&latitude=37.786882&longitude=-122.399972", {
+      .get("/api", {
         headers: {
           Authorization: `Bearer ${process.env.VUE_APP_YELP_API}`
+        },
+        params: {
+          location: "chicago, il",
+          term: "pizza"
         }
       })
       .then(res => {
