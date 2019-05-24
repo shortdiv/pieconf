@@ -1,5 +1,6 @@
 <template>
   <div>
+    <LoginWidget />
     <BaseMap>
       <template v-slot:default="{ loaded, mapContext }">
         <ContextWrapper v-if="loaded">
@@ -61,6 +62,7 @@ import FeaturePopup from "@/components/FeaturePopup.vue";
 import SourceLayer from "@/components/SourceLayer.vue";
 import FeatureLayer from "@/components/FeatureLayer.vue";
 import Icon from "@/assets/logo.png";
+import LoginWidget from "@/components/LoginWidget.vue";
 
 import axios from "axios";
 
@@ -71,7 +73,8 @@ export default {
     SourceLayer,
     FeatureLayer,
     FeaturePopup,
-    ContextWrapper
+    ContextWrapper,
+    LoginWidget
   },
   data() {
     return {
