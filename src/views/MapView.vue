@@ -99,22 +99,6 @@ export default {
   },
   mounted() {
     axios
-      .get("/api", {
-        headers: {
-          Authorization: `Bearer ${process.env.VUE_APP_YELP_API}`
-        },
-        params: {
-          location: "chicago, il",
-          term: "pizza"
-        }
-      })
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    axios
       .get("/.netlify/functions/get-yelp", {
         params: {
           location: "chicago,il",
@@ -162,7 +146,7 @@ body {
 }
 #map {
   position: absolute;
-  top: 0;
+  top: 50px;
   bottom: 0;
   width: 100%;
 }
