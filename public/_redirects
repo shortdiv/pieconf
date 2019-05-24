@@ -1,1 +1,1 @@
-/api/* term=:term location=:location https://api.yelp.com/v3/businesses/search?term=:term&location=:location 301
+/api/* term=:term location=:location https://api.yelp.com/v3/businesses/search?term=:term&location=:location 200
