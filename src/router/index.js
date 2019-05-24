@@ -11,6 +11,7 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   //this will recursively go up from child to parent, useful if utilizing children routes. otherwise, you don't need it
+  //https://github.com/vuejs/vue-router/issues/2354
   let matchedObject = from.matched
     .slice()
     .reverse()
